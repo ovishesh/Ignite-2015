@@ -1,0 +1,45 @@
+{
+  "manifestVersion": 1,
+  "name": "HBC",
+  "description": "Heart Rates Overview",
+  "version": 1,
+  "versionString": "2",
+  "author": "Vishesh Oberoi",
+  "organization": "HBC",
+  "contactEmail": "",
+  "tileIcon": {
+    "46": "icons/tileIcon.png"
+  },
+  "refreshIntervalMinutes": 15,
+  "resources": [
+    {
+      "url": "APIEndPoint",
+      "style": "Simple",
+      "content": {
+        "average": "Json Feed attribute key name",
+        "peak": "Json Feed attribute key name",
+        "lowest": "Json Feed attribute key name"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "layout": "MSBand_NoScrollingText",
+      "condition": "true",
+      "textBindings": [
+        {
+          "elementId": "1",
+          "value": "Av.Resting HR: {{average}}"
+        },
+        {
+          "elementId": "2",
+          "value": "Peak HR: {{peak}}"
+        },
+        {
+          "elementId": "3",
+          "value": "Lowest HR: {{lowest}}"
+        }
+      ]
+    }
+  ]
+}
