@@ -1,0 +1,45 @@
+{
+  "manifestVersion": 1,
+  "name": "HBC",
+  "description": "Heart Rates Overview",
+  "version": 1,
+  "versionString": "2",
+  "author": "Vishesh Oberoi",
+  "organization": "HBC",
+  "contactEmail": "dev.vishesh@outlook.com",
+  "tileIcon": {
+    "46": "icons/tileIcon.png"
+  },
+  "refreshIntervalMinutes": 15,
+  "resources": [
+    {
+      "url": "https://microsoft-apiapp3a0d6c9b99a249acb68f886ccbe169a0.azurewebsites.net/api/heartrates/c79e9353-7ff3-4bad-aa5d-12b0b18ce472",
+      "style": "Simple",
+      "content": {
+        "average": "AverageHeartRate",
+        "peak": "PeakHeartRate",
+        "lowest": "LowestHeartRate"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "layout": "MSBand_NoScrollingText",
+      "condition": "true",
+      "textBindings": [
+        {
+          "elementId": "1",
+          "value": "Av.Resting HR: {{average}}"
+        },
+        {
+          "elementId": "2",
+          "value": "Peak HR: {{peak}}"
+        },
+        {
+          "elementId": "3",
+          "value": "Lowest HR: {{lowest}}"
+        }
+      ]
+    }
+  ]
+}
